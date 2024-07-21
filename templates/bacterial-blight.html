@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="{{ url_for('static', filename='images/cotton-logo.jpg') }}" type="image/jpeg">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css"
+        integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
+
+    <title>कपासवैद्य</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        .navbar {
+            margin: 0 13px 10px 13px;
+            border-radius: 4px;
+            padding: 10px 20px;
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            font-weight: bold;
+            font-size: 1.5rem;
+            color: green;
+        }
+
+        .navbar-brand .logo {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .navbar-nav .nav-item .nav-link {
+            color: #ffffff;
+            padding: 10px 15px;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar-nav .nav-item .nav-link:hover {
+            background-color: #7c2813;
+            border-radius: 5px;
+        }
+
+        @media (max-width: 992px) {
+            .navbar-nav {
+                text-align: center;
+            }
+
+            .navbar-nav .nav-item {
+                margin: 5px 0;
+            }
+        }
+
+        .card-style {
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        .content {
+            padding: 15px;
+            color: white;
+            background-color: #21c37a;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .content-h1 {
+            font-size: 1.5rem;
+        }
+
+        @media (max-width: 430px) and (min-width: 200px) {
+            .content-h1 {
+                font-size: 1rem;
+            }
+        }
+
+        .border img {
+            border-radius: 15px;
+            border: 2px solid black;
+        }
+
+        .disease-description, .hindi-lakshan {
+            background-color: #bbb6e1;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .card img {
+            border-radius: 10px;
+            height: 6ovh;
+        }
+
+        .card-text {
+            margin-top: 10px;
+
+        }
+
+        .product-btn {
+            margin-top: 10px;
+            color: #ffffff;
+            background-color: #007bff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .product-btn:hover {
+            background-color: #0056b3;
+        }
+
+        footer {
+            padding: 15px;
+            background-color: #999c96;
+            color: white;
+            text-align: center;
+            margin-top: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (max-width: 500px) {
+            .card-columns {
+                column-count: 2;
+            }
+
+            .card-style {
+                margin-bottom: 20px;
+            }
+
+            .card img {
+                height: auto;
+                width: 100%;
+            }
+            .card-text{
+                font-size: 1rem;
+            }
+            .disease-description h1{
+                font-size: 1.4rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">
+            <img src="/static/images/cotton-logo.jpg" alt="Logo" class="logo">
+            कपासवैद्य
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/FAQs">FAQs</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container my-2">
+        <div class="row mb-5">
+            <div class="col-sm" style="margin-bottom: 23px;">
+                <span class="border border-primary">
+                    <img src="{{ user_image }}" alt="User Image" class="img-thumbnail">
+                    <!-- <img src="{{pred_output}}" alt="User Image" class="img-thumbnail"> -->
+                </span>
+            </div>
+
+            <div class="col-sm">
+                <div>
+                    <h1 class="text-center mb-5 content-h1 content ">
+                        {{pred_output}}
+                    </h1>
+                </div>
+
+                <h2>Disease Name / रोग का नाम / रोगाचे नाव :</h2>
+                <br>
+                <h3>बॅक्टेरियल ब्लाइट(jivanu angmari rog ) || kapasavaril karpa <br>Bacterial Blight</h3>
+                <hr class="w-100 mx-auto">
+            </div>
+        </div>
+        <div class="disease-description">
+            <p>बॅक्टेरियल ब्लाइट हा कपाशीच्या पिकावर होणारा एक गंभीर जीवाणुजन्य रोग आहे. हा रोग मुख्यतः Xanthomonas campestris pv. malvacearum या जीवाणूच्या संसर्गामुळे होतो. या रोगामुळे पानांवर, खोडांवर, शेंड्यांवर आणि फळांवर लहान, गडद ठिपके निर्माण होतात. हे ठिपके हळूहळू एकत्र येऊन मोठे डाग बनतात, ज्यामुळे पानांची गळण होते आणि पिकाची वाढ थांबते. बॅक्टेरियल ब्लाइटचा प्रादुर्भाव झाल्यास पिकाचे मोठे नुकसान होऊ शकते.</p>
+        </div>
+        
+        <div class="disease-description">
+            <h2>बॅक्टेरियल ब्लाइटची लक्षणे:</h2>
+            <ul>
+                <li>पानांवर लहान, गडद ठिपके</li>
+                <li>पानांची गळण</li>
+                <li>खोडांवर आणि शेंड्यांवर गडद डाग</li>
+                <li>फळांवर ठिपके आणि डाग</li>
+                <li>पिकाची वाढ थांबणे आणि उत्पादन कमी होणे</li>
+            </ul>
+        </div>
+        
+        <div class="hindi-lakshan">
+            <h2>बैक्टीरियल ब्लाइट के लक्षण:</h2>
+            <ul>
+                <li>पत्तियों पर छोटे, गहरे धब्बे</li>
+                <li>पत्तियों का झड़ना</li>
+                <li>तनों और शाखाओं पर गहरे धब्बे</li>
+                <li>फलों पर धब्बे और दाग</li>
+                <li>फसल की वृद्धि रुकना और उत्पादन में कमी आना</li>
+            </ul>
+        </div>
+
+        <div class="disease-description">
+            <h1>रोगाचा उपाय / रोग का उपचार / Solution for Disease :</h1>
+            <p>बॅक्टेरियल ब्लाइटच्या नियंत्रणासाठी प्रतिरोधक वाणांची निवड करावी. याशिवाय, पानांवर कॉपर ऑक्सिक्लोराइड ५०% WP / स्ट्रेप्टोमायसिन सल्फेट ९% + टेट्रासायक्लिन हायड्रोक्लोराइड १% WP यांसारख्या जीवाणुनाशकांचा वापर करावा. या जीवाणुनाशकांच्या वापराने बॅक्टेरियल ब्लाइटच्या प्रादुर्भावाचे नियंत्रण होईल आणि पिकाची वाढ सुरळीत होईल.</p>
+            <p>बैक्टीरियल ब्लाइट को नियंत्रित करने के लिए प्रतिरोधक किस्मों का चयन करें। इसके अलावा, पत्तियों पर कॉपर ऑक्सीक्लोराइड ५०% WP / स्ट्रेप्टोमाइसिन सल्फेट ९% + टेट्रासाइक्लिन हाइड्रोक्लोराइड १% WP जैसे जीवाणुनाशकों का उपयोग करें। इन जीवाणुनाशकों के उपयोग से बैक्टीरियल ब्लाइट के प्रकोप को नियंत्रित किया जा सकता है और फसल की वृद्धि सुचारू रहेगी।</p>
+            <p>To control Bacterial Blight, select resistant varieties. Additionally, use bactericides like Copper Oxychloride 50% WP / Streptomycin Sulfate 9% + Tetracycline Hydrochloride 1% WP on the leaves. Using these bactericides will help control the spread of Bacterial Blight and ensure smooth crop growth.</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1 style="padding: 15px; background-color:rgb(40, 203, 40); color: white;" class="text-center my-3 content-h1">
+            Recommended Products
+        </h1>
+    </div>
+
+    <div class="container">
+        <div class="card-columns">
+            <div class="card card-style text-center">
+                <img class="img-fluid" src="/static/images/bluecopper-fungicide-ezgif.com-resize.webp" alt="">
+                <h3 class="card-text">Dose: 100-110 gm/Acre(एकड़)</h3>
+                <a href="https://krushibajar.netlify.app/" class="product-btn">देखें</a>
+            </div>
+            <div class="card card-style text-center">
+                <img class="img-fluid" src="/static/images/SAAF1-ezgif.com-resize.png" alt="">
+                <h3 class="card-text">Dose: 80-100 gm/Acre(एकड़)</h3>
+                <a href="https://krushibajar.netlify.app/" class="product-btn">देखें</a>
+            </div>
+            <div class="card card-style text-center">
+                <img class="img-fluid" src="/static/images/blitoxquality-ezgif.com-webp-to-jpg-converter.jpg" alt="">
+                <h3 class="card-text">Dose: 100-110 gm/Acre(एकड़)</h3>
+                <a href="https://krushibajar.netlify.app/" class="product-btn">देखें</a>
+            </div>
+            <div class="card card-style text-center">
+                <img class="img-fluid" src="/static/images/cuprofix-ezgif.com-resize.webp" alt="">
+                <h3 class="card-text">Dose: 100-110 gm/Acre(एकड़)</h3>
+                <a href="https://krushibajar.netlify.app/" class="product-btn">देखें</a>
+            </div>
+            <div class="card card-style text-center">
+                <img class="img-fluid" src="/static/images/cytocore-bacterial-blight-control-500x500-ezgif.com-resize.webp" alt="">
+                <h3 class="card-text">Dose:  150-200 ml/Acre(एकड़)</h3>
+                <a href="https://krushibajar.netlify.app/" class="product-btn">देखें</a>
+            </div>
+            <div class="card card-style text-center">
+                <img class="img-fluid" src="/static/images/kocide-ezgif.com-resize.webp" alt="">
+                <h3 class="card-text">Dose: 80-100 gm/Acre(एकड़)</h3>
+                <a href="https://krushibajar.netlify.app/" class="product-btn">देखें</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <h5>Copyright © 2024 Vedant Jayle. All rights reserved.</h5>
+    </footer>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="{{ url_for('static', filename='images/cotton-logo.jpg') }}" type="image/jpeg">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css"
+        integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
+
+    <title>कपासवैद्य</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        .navbar {
+            margin: 0 13px 10px 13px;
+            border-radius: 4px;
+            padding: 10px 20px;
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            font-weight: bold;
+            font-size: 1.5rem;
+            color: green;
+        }
+
+        .navbar-brand .logo {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .navbar-nav .nav-item .nav-link {
+            color: #ffffff;
+            padding: 10px 15px;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar-nav .nav-item .nav-link:hover {
+            background-color: #7c2813;
+            border-radius: 5px;
+        }
+
+        @media (max-width: 992px) {
+            .navbar-nav {
+                text-align: center;
+            }
+
+            .navbar-nav .nav-item {
+                margin: 5px 0;
+            }
+        }
+
+        .card-style {
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        .content {
+            padding: 15px;
+            color: white;
+            background-color: #21c37a;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .content-h1 {
+            font-size: 1.5rem;
+        }
+
+        @media (max-width: 430px) and (min-width: 200px) {
+            .content-h1 {
+                font-size: 1rem;
+            }
+        }
+
+        .border img {
+            border-radius: 15px;
+            border: 2px solid black;
+        }
+
+        .disease-description, .hindi-lakshan {
+            background-color: #bbb6e1;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .card img {
+            border-radius: 10px;
+            height: 6ovh;
+        }
+
+        .card-text {
+            margin-top: 10px;
+
+        }
+
+        .product-btn {
+            margin-top: 10px;
+            color: #ffffff;
+            background-color: #007bff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .product-btn:hover {
+            background-color: #0056b3;
+        }
+
+        footer {
+            padding: 15px;
+            background-color: #999c96;
+            color: white;
+            text-align: center;
+            margin-top: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (max-width: 500px) {
+            .card-columns {
+                column-count: 2;
+            }
+
+            .card-style {
+                margin-bottom: 20px;
+            }
+
+            .card img {
+                height: auto;
+                width: 100%;
+            }
+            .card-text{
+                font-size: 1rem;
+            }
+            .disease-description h1{
+                font-size: 1.4rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">
+            <img src="/static/images/cotton-logo.jpg" alt="Logo" class="logo">
+            कपासवैद्य
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/FAQs">FAQs</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container my-2">
+        <div class="row mb-5">
+            <div class="col-sm" style="margin-bottom: 23px;">
+                <span class="border border-primary">
+                    <img src="{{ user_image }}" alt="User Image" class="img-thumbnail">
+                    <!-- <img src="{{pred_output}}" alt="User Image" class="img-thumbnail"> -->
+                </span>
+            </div>
+
+            <div class="col-sm">
+                <div>
+                    <h1 class="text-center mb-5 content-h1 content">
+                        {{pred_output}}
+                    </h1>
+                </div>
+
+                <h2>Disease Name / रोग का नाम / रोगाचे नाव :</h2>
+                <br>
+                <h3>पानांची वळण<br>Curly Leaf</h3>
+                <hr class="w-100 mx-auto">
+            </div>
+        </div>
+        <div class="disease-description">
+            <p>पानांची वळण हा एक विषाणुजन्य रोग आहे जो कपाशीच्या पिकावर होतो. हा रोग विषाणूच्या संसर्गामुळे होतो आणि मुख्यतः पानांवर परिणाम करतो. या रोगामुळे पानं वळतात, आकसतात आणि पिवळी पडतात. पानांच्या कडा वळतात आणि त्यांच्या आकारात बदल होतो. या रोगामुळे पिकाच्या वाढीवर आणि उत्पादनावर गंभीर परिणाम होतो.</p>
+        </div>
+        
+        <div class="disease-description">
+            <h2>पानांची वळण रोगाची लक्षणे:</h2>
+            <ul>
+                <li>पानं वळणे आणि आकसणे</li>
+                <li>पानांचा पिवळसर रंग</li>
+                <li>पानांच्या कडांच्या वळण</li>
+                <li>पानांचा आकार बदलणे</li>
+                <li>पिकाची वाढ थांबणे आणि उत्पादन कमी होणे</li>
+            </ul>
+        </div>
+        
+        <div class="hindi-lakshan">
+            <h2>पत्तियों के वलन के लक्षण:</h2>
+            <ul>
+                <li>पत्तियों का मुड़ना और सिकुड़ना</li>
+                <li>पत्तियों का पीला होना</li>
+                <li>पत्तियों के किनारों का मुड़ना</li>
+                <li>पत्तियों का आकार बदलना</li>
+                <li>फसल की वृद्धि रुकना और उत्पादन में कमी आना</li>
+            </ul>
+        </div>
+
+        <div class="disease-description">
+            <h1>रोगाचा उपाय / रोग का उपचार / Solution for Disease :</h1>
+            <p>पत्तियों के वलन रोग के नियंत्रण के लिए प्रतिरोधक किस्मों का चयन करना चाहिए। साथ ही, जैविक उपाय जैसे न्यूनतम उर्वरकों का उपयोग और संतुलित सिंचाई प्रणाली अपनानी चाहिए। रोग के प्रसार को नियंत्रित करने के लिए छिड़काव के विकल्प चुन सकते हैं:</p>
+             <br>
+            <p>पानांची वळण रोगाच्या नियंत्रणासाठी प्रतिरोधक वाणांची निवड करावी. तसेच, जैविक उपाययोजना करावी जसे की न्यूनतम खतांचा वापर आणि संतुलित सिंचन पद्धती. रोगाच्या प्रसाराच्या नियंत्रणासाठी, फवारणीचे पर्याय निवडता येतील:</p>
+            <ul>
+                <li><strong>नीम तेल:</strong> 3% द्रावणाची फवारणी.</li>
+                <li><strong>कॅप्टन:</strong> 50 WP 0.2%  द्रावणाची फवारणी.</li>
+                <li><strong>क्लोरपायरीफॉस:</strong> 20 EC 2.5 मिली/लिटर पाण्यात फवारणी.</li>
+                <li>फवारणी करताना विषाणू नष्ट करणारे आणि फवारणीच्या प्रमाणाचे निरीक्षण करावे.</li>
+            </ul>
+            <p>नियंत्रित उपाययोजना घेऊन पिकाची वाढ नियमित राहील आणि उत्पादन सुधारेल.</p>
+            <p>To control Curly Leaf, select resistant varieties. Additionally, use biological measures like minimal use of fertilizers and balanced irrigation practices. For controlling the spread of the disease, you can use spray options:</p>
+            <ul>
+                <li><strong>Neem Oil:</strong> 3% solution spray.</li>
+                <li><strong>Capton:</strong> 50 WP 0.2% solution spray.</li>
+                <li><strong>Chlorpyrifos:</strong> 20 EC 2.5 ml/liter water spray.</li>
+                <li>While spraying, monitor the spray ratio and use antiviral agents.</li>
+            </ul>
+            <p>By taking controlled measures, crop growth will be regulated and production will improve.</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1 style="padding: 15px; background-color: #85cc3e; color: white;" class="text-center my-3 content-h1">
+            Recommended Products
+        </h1>
+    </div>
+
+    <div class="container">
+        <div class="card-columns">
+            <div class="card card-style text-center">
+                <img class="img-fluid" src="/static/images/magic-virox-plus-ezgif.com-resize.jpg" alt="">
+                <h3 class="card-text">Dose: 250-300 ml/Acre (एकड़) </h3>
+                <a href="https://krushibajar.netlify.app/" class="product-btn">देखें</a>
+            </div>
+            <div class="card card-style text-center">
+                <img class="img-fluid" src="/static/images/GeolifeNoVirus-ezgif.com-resize.webp" alt="">
+                <h3 class="card-text">Dose: 200-250 ml/Acre (एकड़)</h3>
+                <a href="https://krushibajar.netlify.app/" class="product-btn">देखें</a>
+            </div>
+            <div class="card card-style text-center">
+                <img class="img-fluid" src="/static/images/enviro-500x500-ezgif.com-resize.webp" alt="">
+                <h3 class="card-text">Dose: 200-250 ml /Acre (एकड़)</h3>
+                <a href="https://krushibajar.netlify.app/" class="product-btn">देखें</a>
+            </div>
+            <div class="card card-style text-center">
+                <img class="img-fluid" src="/static/images/ezgif.com-resize.jpg" alt="">
+                <h3 class="card-text">Dose: 200-250 ml/Acre (एकड़)</h3>
+                <a href="https://krushibajar.netlify.app/" class="product-btn">देखें</a>
+            </div>
+            <div class="card card-style text-center">
+                <img class="img-fluid" src="/static/images/orcon-viricides-ezgif.com-resize.webp" alt="">
+                <h3 class="card-text">Dose: 200-250 ml /Acre (एकड़)</h3>
+                <a href="https://krushibajar.netlify.app/" class="product-btn">देखें</a>
+            </div>
+            <div class="card card-style text-center">
+                <img class="img-fluid" src="/static/images/berrysunvc-100viricide-ezgif.com-resize.webp" alt="">
+                <h3 class="card-text">Dose: 200-250 gm /Acre (एकड़)</h3>
+                <a href="https://krushibajar.netlify.app/" class="product-btn">देखें</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <h5>Copyright © 2024 Vedant Jayle. All rights reserved.</h5>
+    </footer>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

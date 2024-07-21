@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{{ url_for('static', filename='images/cotton-logo.jpg') }}" type="image/jpeg">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Rowdies:wght@700&display=swap" rel="stylesheet">
+ 
+    <title>कपासवैद्य</title>
+    <link href="https://fonts.googleapis.com/css2?family=Rowdies:wght@700&display=swap" rel="stylesheet">
+    <style>
+        /* Reset CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+         
+        .carousel-inner img {
+            height: 80vh;
+        }
+        /* Global Styles */
+       
+     body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+}
+
+.navbar {
+    
+  margin-left: 13px;
+  margin-right: 13px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+    padding: 10px 20px;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: green;
+}
+
+.navbar-brand .logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.navbar-nav .nav-item .nav-link {
+    color: #ffffff;
+    padding: 10px 15px;
+    transition: background-color 0.3s ease;
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+    background-color: #7c2813;
+    border-radius: 5px;
+}
+
+@media (max-width: 992px) {
+    .navbar-nav {
+        text-align: center;
+    }
+
+    .navbar-nav .nav-item {
+        margin: 5px 0;
+    }
+}
+
+    .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header Styles */
+header {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.carousel-caption {
+            background: rgba(24, 25, 26, 0.5);
+            border-radius: 10px;
+        }
+ 
+        .carousel-caption h3 {
+ 
+ 
+            font-family: 'Rowdies', cursive;
+            color: yellow;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+ 
+        }
+ 
+        .carousel-caption p {
+            padding: 7px;
+ 
+        }
+ 
+
+
+        /* Form Styles */
+        .details {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+        }
+
+        .details h1 {
+            color: white;
+            background-color: #2d2f31;
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+        }
+
+        .details h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .upload {
+            font-size: 20px;
+            background-color: #fff;
+            border: 3px solid #2d2f31;
+            border-radius: 20px;
+            padding: 10px 20px;
+            width: 300px;
+            margin-bottom: 20px;
+        }
+
+        input[type="submit"] {
+            padding: 15px 35px;
+            background-color:#c9dbb7;
+            border-radius: 5px;
+            color: black;
+            font-size: 1.5rem;
+            border: 1px solid #1a1d1d;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: red;
+            color: white;
+        }
+
+        /* Gallery Styles */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .gallery-item img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Contact Section Styles */
+        .Content-h5 {
+            background-color: #999c96;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            border-radius: 15px;
+            margin-top: 50px;
+        }
+        .how-to-use {
+            background-color: #f8bbbb;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 50px auto;
+            max-width: 800px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .how-to-use h2 {
+            color: #2d2f31;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .how-to-use p {
+            color: #333;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        /* Responsive Media Query */
+        @media only screen and (max-width: 768px) {
+            .carousel-caption {
+                max-width: 80%;
+            }
+
+            .upload {
+                width: 100%;
+                font-size: 1.1rem;
+            }
+            .carousel-caption{
+                width: 100%;
+                height: 110px;
+            }
+            .carousel-caption h3{
+                font-size: 0.7rem;
+            }
+            .carousel-caption p{
+                font-size: 0.55rem;
+               
+            }
+            .carousel-inner img{
+                width: 100%;
+                height: 400px;
+            }
+            .how-to-use h2{
+                font-size: 1.5rem;
+            }
+        }
+
+        footer {
+            padding: 15px;
+            background-color: #999c96;
+            color: white;
+            text-align: center;
+            margin-top: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">
+                <img src="/static/images/cotton-logo.jpg" alt="Logo" class="logo">
+                कपासवैद्य
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contact">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/FAQs">FAQs</a>
+                    </li>
+                </ul>
+            </div>
+            </nav>
+        <div class="container-fluid">
+            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel" data-slide-to="1" class=""></li>
+                    <li data-target="#myCarousel" data-slide-to="2" class=""></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item active ">
+                        <img src="/static/images/young-indian-agronomist-with-farmer-cotton-field-showing-some-information-mobile-phone_75648-1320.avif" class="d-block w-100" alt="...">
+ 
+                        <div class="container">
+                            <div class="container background-img3">
+                                <div class="carousel-caption">
+ 
+                                    <h3>कपाशीच्या झाडाच्या रोगाचा अंदाज आणि उपाय</h3>
+                                    <p>
+                                        आता तुमच्या कापूस पिकावरील रोग जाणून घेणे आणि त्यावर उपाय करणे सोपे झाले आहे.
+                                     कृत्रिम बुद्धिमत्ता आणि सखोल शिक्षण तंत्रज्ञानाचा वापर करून, 
+                                     कापसवैद्य हे एक साधन आहे जे शेतकऱ्यांना सेवा देण्यासाठी डिझाइन केलेले आहे.
+                                    </p>
+ 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+ 
+                    <div class="carousel-item">
+                        <img src="/static/images/img2.jpg" class="d-block w-100" alt="...">
+                        <div class="container">
+                            <div class="carousel-caption">
+                                <h3>कपास पेड़ का रोग का अंदाज और उपाय 
+                                </h3>
+                                <p>
+                                    आता तुमच्या कापूस पिकावरील रोग जाणून घेणे आणि त्यावर उपाय करणे सोपे झाले आहे.
+                                     कृत्रिम बुद्धिमत्ता आणि सखोल शिक्षण तंत्रज्ञानाचा वापर करून, 
+                                     कापसवैद्य हे एक साधन आहे जे शेतकऱ्यांना सेवा देण्यासाठी डिझाइन केलेले आहे.</p>
+ 
+                            </div>
+                        </div>
+                    </div>
+ 
+ 
+                    <div class="carousel-item">
+                        <img src="/static/images/img3.jpg" class="d-block w-100" alt="...">
+                        <div class="container">
+                            <div class="container ">
+                                <div class="carousel-caption">
+                                    <h3>
+                                        Cotton Plant Disease Prediction </h3>
+                                    <p>Deep Learning and AI have the potential to do a lot of good.
+                                        Now knowing the disease on your cotton plant and taking the solution to it has become very easy. 
+                                        Using artificial intelligence and deep learning technology, kapasvaidhya is a tool that is designed to serve  farmers.
+                                    </p>
+ 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+    </header>
+</body>
+</html>
+<section class="how-to-use">
+    <h2>How to Use (उपयोग ) </h2>
+    <p>नीचे दिए गए "Choose File" विकल्प पर क्लिक करें और अपने कपास के पेड़ की फोटो का चयन करें और Predict विकल्प  पर क्लिक करें</p>
+    <form action="/predict" method="post" enctype="multipart/form-data" onsubmit="showloading()">
+        <input type="file" name="image" class="upload" required>
+        <input type="submit" value="Predict" >
+    </form>
+
+</section>   
+   
+
+
+    <section class="gallery-h1">
+        <div class="container">
+            <h1>Photo Gallery</h1>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="/static/images/Gallery1.jpg" alt="Gallery Image 1">
+                </div>
+                <div class="gallery-item">
+                    <img src="/static/images/Gallery2.jpg" alt="Gallery Image 2">
+                </div>
+                <div class="gallery-item">
+                    <img src="/static/images/Gallery3.jpg" alt="Gallery Image 3">
+                </div>
+                <div class="gallery-item">
+                    <img src="/static/images/Gallery4.jpg" alt="Gallery Image 4">
+                </div>
+                <div class="gallery-item">
+                    <img src="/static/images/Gallery5.jpg" alt="Gallery Image 5">
+                </div>
+                <div class="gallery-item">
+                    <img src="/static/images/Gallery6.jpg" alt="Gallery Image 6">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <h5>Copyright © 2024 Vedant Jayle. All rights reserved.</h5>
+    </footer>
+
+    <script>
+        function showloading() {
+            console.log('Form submission in progress...');
+        }
+    </script>
+
+        
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+    </script>
+</body>
+
+</html>

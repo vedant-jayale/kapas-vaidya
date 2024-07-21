@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{{ url_for('static', filename='images/cotton-logo.jpg') }}" type="image/jpeg">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Rowdies:wght@700&display=swap" rel="stylesheet">
+
+    <title>कपासवैद्य</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        .navbar {
+            margin: 10px 13px;
+            border-radius: 4px;
+            padding: 10px 20px;
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            font-weight: bold;
+            font-size: 1.5rem;
+            color: green;
+        }
+
+        .navbar-brand .logo {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .navbar-nav .nav-item .nav-link {
+            color: #ffffff;
+            padding: 10px 15px;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar-nav .nav-item .nav-link:hover {
+            background-color: #7c2813;
+            border-radius: 5px;
+        }
+
+        .about-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .image-box {
+            margin-top: 15px;
+            border: 2px solid #dee2e6;
+            border-radius: 10px;
+            padding: 10px;
+            text-align: center;
+            background-color: #ffffff;
+        }
+
+        .farmer-image {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .text-center {
+            text-align: center;
+            color: green;
+        }
+
+        .description {
+            padding: 25px;
+            background-color: #b0c4d8;
+            margin-top: 20px;
+            border: 1px solid black;
+            border-radius: 4px;
+        }
+
+        .description h2 {
+            margin-top: 20px;
+            font-size: 1.5rem;
+            color: #343a40;
+        }
+
+        .description p {
+            font-size: 1rem;
+            color: #495057;
+            line-height: 1.6;
+        }
+        footer {
+            padding: 15px;
+            background-color: #999c96;
+            color: white;
+            text-align: center;
+            margin-top: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+
+        @media (max-width: 992px) {
+            .navbar-nav {
+                text-align: center;
+            }
+
+            .navbar-nav .nav-item {
+                margin: 5px 0;
+            }
+
+            .description h2 {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-top: 20px;
+                font-size: 1.2rem;
+                color: #343a40;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">
+            <img src="/static/images/cotton-logo.jpg" alt="Logo" class="logo">
+            कपासवैद्य
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/FAQs">FAQs</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="about-container mt-5">
+        <div class="image-box">
+            <img src="/static/images/indian-farmer-with smartphone.jpg" alt="Farmer with Mobile" class="farmer-image">
+        </div>
+        <h1 class="text-center mt-4">कपासवैद्य</h1>
+        <div class="description mt-4">
+            <h2>मराठी</h2>
+            <p>कपासवैद्य हे एक नाविन्यपूर्ण साधन आहे जे कृत्रिम बुद्धिमत्ता (Artificial Intelligence) आणि सखोल शिक्षण (Deep Learning) तंत्रज्ञानाचा वापर करून शेतकऱ्यांना त्यांच्या पिकांमध्ये रोगांचा शोध घेण्यास मदत करण्यासाठी डिझाइन केलेले आहे. या साधनाचा उद्देश पिकांच्या उत्पन्नात सुधारणा करणे आणि अचूक रोग भाकीत आणि उपाय प्रदान करून वनस्पतींचे आरोग्य सुनिश्चित करणे आहे.</p>
+
+            <h2>हिन्दी</h2>
+            <p>कपासवैद्य एक अभिनव उपकरण है जिसे कृत्रिम बुद्धिमत्ता (Artificial Intelligence) और गहन शिक्षण (Deep Learning) तकनीक का उपयोग करके किसानों को उनकी फसलों में रोगों का पता लगाने में मदद करने के लिए डिज़ाइन किया गया है। इस उपकरण का उद्देश्य फसल उत्पादन में सुधार करना और सटीक रोग भविष्यवाणियों और उपचार प्रदान करके पौधों के स्वास्थ्य को सुनिश्चित करना है।</p>
+
+            <h2>English</h2>
+            <p>Kapasvaidhya is an innovative tool designed to help farmers detect diseases in their crops using artificial intelligence and deep learning technology. This tool is aimed at improving crop yield and ensuring the health of plants by providing accurate disease predictions and remedies.</p>
+        </div>
+    </div>
+
+    <footer>
+        <h5>Copyright © 2024 Vedant Jayle. All rights reserved.</h5>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

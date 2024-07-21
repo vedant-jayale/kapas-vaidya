@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{{ url_for('static', filename='images/cotton-logo.jpg') }}" type="image/jpeg">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rowdies:wght@700&display=swap" rel="stylesheet">
+ 
+    <title>कपासवैद्य</title>
+    <link href="https://fonts.googleapis.com/css2?family=Rowdies:wght@700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Rowdies', sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        .navbar {
+            margin: 0 13px 10px 13px;
+            border-radius: 4px;
+            padding: 10px 20px;
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            font-weight: bold;
+            font-size: 1.5rem;
+            color: green;
+        }
+
+        .navbar-brand .logo {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .navbar-nav .nav-item .nav-link {
+            color: #ffffff;
+            padding: 10px 15px;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar-nav .nav-item .nav-link:hover {
+            background-color: #7c2813;
+            border-radius: 5px;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #f4e7e7;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .faq-container h1 {
+            text-align: center;
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+        }
+
+        .faq-item h3 {
+            font-size: 1.25rem;
+            color: #343a40;
+            margin-bottom: 10px;
+        }
+
+        .faq-item p {
+            font-size: 1rem;
+            color: #495057;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 992px) {
+            .navbar-nav {
+                text-align: center;
+            }
+
+            .navbar-nav .nav-item {
+                margin: 5px 0;
+            }
+
+            .faq-container {
+                padding: 10px;
+                margin-left:6px;
+                margin-right: 6px;
+            }
+
+            .faq-container h1 {
+                font-size: 1.5rem;
+            }
+        }
+        footer {
+            padding: 15px;
+            background-color: #999c96;
+            color: white;
+            text-align: center;
+            margin-top: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">
+            <img src="/static/images/cotton-logo.jpg" alt="Logo" class="logo">
+            कपासवैद्य
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/faq">FAQ</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="faq-container">
+        <h1>आपके सवालों का निराकरण</h1>
+        
+        <div class="faq-item">
+            <h3>प्रश्न 1: इस ऐप का उपयोग कैसे करें?</h3>
+            <p>उत्तर: ऐप का उपयोग करना बहुत सरल है। सबसे पहले, ऐप खोलें और अपने कपास के खेत की तस्वीर लें या मौजूदा तस्वीर अपलोड करें। ऐप स्वचालित रूप से आपकी तस्वीर का विश्लेषण करेगा और किसी भी बीमारी का पता लगाएगा। फिर यह आपको बीमारी की जानकारी और समाधान के सुझाव देगा, जिससे आप अपने खेत की देखभाल बेहतर तरीके से कर सकें।</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>प्रश्न 2: क्या यह ऐप सभी प्रकार की कपास की बीमारियों का पता लगा सकता है?</h3>
+            <p>उत्तर: हां, यह ऐप विभिन्न सामान्य कपास की बीमारियों का पता लगाने में सक्षम है, जैसे कि पत्तियों का धब्बा, जड़ सड़न, और अधिक। हालांकि, कुछ दुर्लभ बीमारियों के लिए, विशेषज्ञ की सलाह लेना बेहतर होता है।</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>प्रश्न 3: इस ऐप को उपयोग करने के लिए इंटरनेट की आवश्यकता है क्या?</h3>
+            <p>उत्तर: हां, इस ऐप को सही तरीके से काम करने और त्वरित परिणाम देने के लिए इंटरनेट की आवश्यकता होती है। जब आप तस्वीर अपलोड करते हैं, तो ऐप इसे क्लाउड में प्रोसेस करता है और बीमारी का पता लगाने के बाद आपको परिणाम देता है।</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>प्रश्न 4: क्या यह ऐप मुफ्त है?</h3>
+            <p>उत्तर: हां, यह ऐप डाउनलोड और उपयोग करने के लिए पूरी तरह से मुफ्त है। आप बिना किसी अतिरिक्त शुल्क के इसका लाभ उठा सकते हैं और अपने खेत की देखभाल कर सकते हैं।</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>प्रश्न 5: अगर मुझे ऐप में कोई समस्या आती है तो क्या करूं?</h3>
+            <p>उत्तर: अगर आपको ऐप का उपयोग करते समय कोई समस्या आती है, तो आप हमारी सहायता टीम (Contact Page) से संपर्क कर सकते हैं। सहायता टीम से संपर्क करने का विकल्प ऐप के अंदर "सहायता"(Contact)  में मिलेगा। हम आपकी सहायता के लिए हमेशा तैयार हैं।</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>प्रश्न 6: क्या यह ऐप केवल कपास के लिए है?</h3>
+            <p>उत्तर: हां, फिलहाल यह ऐप विशेष रूप से कपास की फसलों की बीमारियों का पता लगाने और उनकी देखभाल के सुझाव देने के लिए बनाया गया है। भविष्य में, हम अन्य फसलों के लिए भी समर्थन जोड़ सकते हैं।</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>प्रश्न 7: क्या यह ऐप मेरे डेटा को सुरक्षित रखेगा?</h3>
+            <p>उत्तर: हां, आपका डेटा हमारी प्राथमिकता है। हम आपके द्वारा अपलोड की गई सभी जानकारी को सुरक्षित और गोपनीय रखते हैं। आपका डेटा केवल बीमारी का पता लगाने और समाधान सुझाने के लिए उपयोग किया जाता है।</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>प्रश्न 8: इस ऐप से मुझे और कौन-कौन से फायदे मिल सकते हैं?</h3>
+            <p>उत्तर: इस ऐप का उपयोग करके, आप न केवल बीमारियों का जल्दी पता लगा सकते हैं, बल्कि आपको खेती से संबंधित उपयोगी सुझाव और जानकारी भी मिलेगी। यह आपकी फसल की गुणवत्ता और उत्पादन को बढ़ाने में मदद करेगा, जिससे आप अधिक लाभ कमा सकते हैं।</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>प्रश्न 9: क्या मुझे ऐप के नतीजों पर पूरी तरह से भरोसा करना चाहिए?</h3>
+            <p>उत्तर: ऐप उन्नत आर्टिफिशियल इंटेलिजेंस (Artificial Intelligence ) और डीप लर्निंग (Deep Learning) तकनीकों का उपयोग करता है, जो आमतौर पर सटीक परिणाम प्रदान करते हैं। फिर भी, अंतिम निर्णय लेने से पहले विशेषज्ञ की सलाह लेना हमेशा एक अच्छा विचार है, खासकर अगर समस्या गंभीर हो।</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>प्रश्न 10: इस ऐप का अपडेट कब मिलता है?</h3>
+            <p>उत्तर: हम नियमित रूप से ऐप को अपडेट करते रहते हैं ताकि आपको नई सुविधाएं और बेहतर प्रदर्शन मिल सके। सुनिश्चित करें कि आपने अपने ऐप को नवीनतम संस्करण में अपडेट किया है ताकि आप सभी नवीनतम सुधारों और सुविधाओं का लाभ उठा सकें।</p>
+        </div>
+    </div>
+
+     <footer>
+        <h5>Copyright © 2024 Vedant Jayle. All rights reserved.</h5>
+    </footer>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
